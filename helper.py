@@ -4,9 +4,10 @@ import streamlit as st
 import requests
 import openai
 
+
+openai.api_key =read_yaml('secrets.yaml')['api_key']
+
 def generate(content,messages):
-    api_key=read_yaml('secrets.yaml')['api_key']
-    openai.api_key =api_key
     messages.append({"role": "user", "content": content})
     completion = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
