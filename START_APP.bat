@@ -1,0 +1,1 @@
+call start cmd /c python -m streamlit run app.py 
